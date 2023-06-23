@@ -146,6 +146,11 @@ h6 {
   text-decoration: none;
 }
 
+#header .logo h1 a .sub-head{
+	font-size: 11px;
+    text-align: center;
+}
+
 #header .logo img {
   padding: 0;
   margin: 0;
