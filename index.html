@@ -258,7 +258,7 @@
 								<li>Emergency laundry service, delivered the next day, will curtail a 30% extra charge.</li>
                             </ul>
                             <div class="btn-wrap">
-                                <!-- <a href="#" class="btn-buy">Buy Now</a> -->
+								<a href="https://calendly.com/pickndroplaundrybloomington/" target="blank" class="btn-buy">Book Now</a>
                             </div>
                         </div>
                     </div>
@@ -365,7 +365,7 @@
 
                     <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left" data-aos-delay="200">
 
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form method="post" action="/" role="form" class="php-email-form" onSubmit="return fnSendContact(this);">
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -380,11 +380,11 @@
                             <div class="form-group mt-3">
                                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
                             </div>
-                            <div class="my-3">
-                                <div class="loading">Loading</div>
-                                <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
-                            </div>
+                            <!-- <div class="my-3"> -->
+                                <!-- <div class="loading">Loading</div> -->
+                                <!-- <div class="error-message"></div> -->
+                                <!-- <div class="sent-message">Your message has been sent. Thank you!</div> -->
+                            <!-- </div> -->
                             <div class="text-center"><button type="submit">Send Message</button></div>
                         </form>
 
@@ -486,7 +486,10 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
-	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		function fnSendContact(){try{var e=new XMLHttpRequest,t="https://api.brevo.com/v3/smtp/email",a=JSON.stringify({sender:{name:document.querySelector("form.php-email-form #name").value,email:document.querySelector("form.php-email-form #email").value},to:[{email:"manilaj.16@gmail.com"}],subject:"From Website - "+document.querySelector("form.php-email-form #subject").value,htmlContent:document.querySelector('form.php-email-form [name="message"]').value});e.open("POST",t,!0),e.setRequestHeader("Content-type","application/json"),e.setRequestHeader("api-key","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"),e.onreadystatechange=function(){4==e.readyState&&(200==e.status||201==e.status)&&alert("Thanks for contacting us, our team will get back to you as soon as possible.")},e.send(a)}catch(o){console.log(o)}return!1}
+	</script>
+	<!-- <script src="https://smtpjs.com/v3/smtp.js"></script> -->
 
 </body>
 
